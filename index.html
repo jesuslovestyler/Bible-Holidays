@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="Every holiday appointed in the Bible — the feasts of Leviticus 23, Purim, and the Feast of Dedication — with its Hebrew date, its next date on our calendar, and a countdown so none of them slips by." />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Bible Holidays — The Feasts of the Lord" />
+<meta property="og:description" content="Every holiday appointed in the Bible — the feasts of Leviticus 23, Purim, and the Feast of Dedication — with its Hebrew date, its next date on our calendar, and a countdown so none of them slips by." />
+<meta property="og:image" content="https://jesuslovestyler.github.io/Bible-Holidays/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:type" content="image/png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Bible Holidays — The Feasts of the Lord" />
+<meta name="twitter:description" content="Every holiday appointed in the Bible — the feasts of Leviticus 23, Purim, and the Feast of Dedication — with its Hebrew date, its next date on our calendar, and a countdown so none of them slips by." />
+<meta name="twitter:image" content="https://jesuslovestyler.github.io/Bible-Holidays/og-image.png" />
+<link rel="icon" href="data:," />
+<title>Bible Holidays — The Feasts of the Lord</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    color-scheme: light dark;
+    --bg:#faf5ea; --bg2:#f2e8d2; --card:#fffdf7; --card-line:#e0d2b2;
+    --ink:#2b2118; --ink-soft:#5d4c38; --ink-faint:#8a7355;
+    --wine:#7c2231; --wine-deep:#5c1622; --olive:#5c6631; --gold:#a87f1f;
+    --chip:#efe4c8; --chip-on:#7c2231;
+    --alert-bg:#fcefc9; --alert-line:#d9a441; --alert-ink:#66480a;
+    --now-bg:#e7eed3; --now-line:#7d8b4d; --now-ink:#3a471c;
+    --shadow:0 1px 2px rgba(60,40,10,.06),0 10px 26px rgba(60,40,10,.07);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#16110c; --bg2:#1d1610; --card:#241b12; --card-line:#45351f;
+      --ink:#f1e7d0; --ink-soft:#cdbb97; --ink-faint:#9c8a68;
+      --wine:#e08a97; --wine-deep:#eda9b3; --olive:#b3c07e; --gold:#dcbb62;
+      --chip:#332917; --chip-on:#a83a4c;
+      --alert-bg:#3a2d10; --alert-line:#a87f1f; --alert-ink:#f0d48a;
+      --now-bg:#26300f; --now-line:#7d8b4d; --now-ink:#cfe0a0;
+      --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 26px rgba(0,0,0,.35);
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:"Newsreader", Georgia, "Times New Roman", serif;
+    font-size:17px; line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1060px; margin:0 auto; padding:0 18px 56px}
+  h1,h2,h3{font-family:"Cormorant Garamond", Georgia, serif; line-height:1.12; margin:0}
+  a{color:var(--wine)}
+  /* ---------- home button ---------- */
+  .home-bar{display:flex; justify-content:flex-end; padding-top:14px}
+  .home-pill{display:inline-block; text-decoration:none; font-family:Georgia,serif; font-size:.85rem; font-weight:600; color:var(--wine); background:var(--card); border:1px solid var(--card-line); border-radius:999px; padding:7px 16px; box-shadow:var(--shadow)}
+  .home-pill:hover{border-color:var(--gold)}
+  /* ---------- header ---------- */
+  header.top{padding:34px 0 8px; text-align:center}
+  .over{letter-spacing:.22em; text-transform:uppercase; font-size:.72rem; color:var(--gold); font-family:Georgia,serif}
+  header.top h1{font-size:clamp(2.6rem,7vw,4rem); font-weight:700; margin:.18em 0 .12em; color:var(--ink)}
+  header.top h1 .accent{color:var(--wine)}
+  .lead{max-width:640px; margin:0 auto; color:var(--ink-soft); font-size:1.08rem}
+  .lead em{color:var(--ink)}
+  figure.hero{margin:22px auto 0; max-width:880px}
+  figure.hero img{width:100%; height:auto; display:block; border-radius:10px; border:1px solid var(--card-line); box-shadow:var(--shadow)}
+  figure.hero figcaption{margin-top:8px; font-size:.85rem; color:var(--ink-faint); text-align:center; font-style:italic}
+  /* ---------- today strip ---------- */
+  .today{
+    margin:26px auto 0; max-width:880px; background:var(--card); border:1px solid var(--card-line);
+    border-radius:10px; box-shadow:var(--shadow); padding:14px 20px;
+    display:flex; flex-wrap:wrap; gap:8px 28px; justify-content:center; text-align:center;
+  }
+  .today div{min-width:150px}
+  .today .k{display:block; font-size:.7rem; letter-spacing:.18em; text-transform:uppercase; color:var(--ink-faint); font-family:Georgia,serif}
+  .today .v{display:block; font-family:"Cormorant Garamond",Georgia,serif; font-size:1.28rem; font-weight:600}
+  /* ---------- coming up next ---------- */
+  .next{
+    margin:20px auto 0; max-width:880px; border-radius:12px; overflow:hidden;
+    background:linear-gradient(160deg, var(--wine-deep), var(--wine) 58%, #8f3242); color:#fdf6e3;
+    box-shadow:var(--shadow); border:1px solid rgba(0,0,0,.15);
+  }
+  @media (prefers-color-scheme: dark){ .next{background:linear-gradient(160deg,#3d1420,#571e2c 58%,#662635)} }
+  .next-inner{padding:26px 28px 24px}
+  .next .k{letter-spacing:.22em; text-transform:uppercase; font-size:.72rem; color:#eec987; font-family:Georgia,serif}
+  .next h2{font-size:clamp(2rem,5.5vw,2.9rem); font-weight:700; margin:.14em 0 .05em; color:#fff8e7}
+  .next .heb{font-size:1.35rem; color:#eec987; font-family:"Cormorant Garamond",Georgia,serif}
+  .next p{margin:.5em 0 0; max-width:620px; color:#f7ecd2}
+  .next .facts{display:flex; flex-wrap:wrap; gap:10px; margin-top:16px}
+  .next .fact{background:rgba(255,248,231,.13); border:1px solid rgba(255,248,231,.28); border-radius:8px; padding:8px 14px; font-size:.95rem}
+  .next .fact b{display:block; font-family:"Cormorant Garamond",Georgia,serif; font-size:1.2rem; color:#fff}
+  .next .fact span{font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:#eec987; font-family:Georgia,serif}
+  /* ---------- reminder banner ---------- */
+  .reminder{max-width:880px; margin:16px auto 0; border-radius:10px; padding:14px 18px; display:none; gap:12px; align-items:flex-start; font-size:1rem}
+  .reminder.show{display:flex}
+  .reminder.soon{background:var(--alert-bg); border:1px solid var(--alert-line); color:var(--alert-ink)}
+  .reminder.now{background:var(--now-bg); border:1px solid var(--now-line); color:var(--now-ink)}
+  .reminder .bell{font-size:1.3rem; line-height:1.2}
+  .reminder b{font-family:"Cormorant Garamond",Georgia,serif; font-size:1.2rem}
+  /* ---------- sections ---------- */
+  section{margin-top:44px}
+  .sec-head{max-width:880px; margin:0 auto 6px; text-align:center}
+  .sec-head h2{font-size:clamp(1.7rem,4.5vw,2.3rem); font-weight:700}
+  .sec-head h2 .accent{color:var(--wine)}
+  .sec-head p{color:var(--ink-soft); max-width:620px; margin:.35em auto 0}
+  /* ---------- timeline ---------- */
+  .timeline{max-width:880px; margin:18px auto 0; background:var(--card); border:1px solid var(--card-line); border-radius:12px; box-shadow:var(--shadow); overflow:hidden}
+  .tl-row{display:flex; align-items:baseline; gap:14px; padding:13px 20px; border-top:1px solid var(--card-line); text-decoration:none; color:var(--ink)}
+  .tl-row:first-child{border-top:none}
+  a.tl-row:hover{background:var(--bg2)}
+  .tl-date{flex:0 0 118px; font-family:"Cormorant Garamond",Georgia,serif; font-weight:700; font-size:1.12rem; color:var(--wine); white-space:nowrap}
+  .tl-name{flex:1 1 auto; font-weight:500}
+  .tl-name small{display:block; color:var(--ink-faint); font-size:.85rem}
+  .tl-badge{flex:0 0 auto; font-size:.78rem; font-family:Georgia,serif; letter-spacing:.04em; padding:3px 10px; border-radius:999px; background:var(--chip); color:var(--ink-soft); white-space:nowrap}
+  .tl-badge.soon{background:var(--alert-bg); border:1px solid var(--alert-line); color:var(--alert-ink)}
+  .tl-badge.now{background:var(--now-bg); border:1px solid var(--now-line); color:var(--now-ink)}
+  /* ---------- filters + cards ---------- */
+  .filters{display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:18px auto 4px; max-width:880px}
+  .filters button{
+    font:inherit; font-size:.92rem; cursor:pointer; border-radius:999px; padding:7px 16px;
+    border:1px solid var(--card-line); background:var(--card); color:var(--ink-soft);
+  }
+  .filters button[aria-pressed="true"]{background:var(--chip-on); border-color:var(--chip-on); color:#fff8e7}
+  .cards{display:grid; grid-template-columns:1fr; gap:16px; max-width:880px; margin:16px auto 0}
+  @media (min-width:720px){ .cards{grid-template-columns:1fr 1fr} }
+  .card{background:var(--card); border:1px solid var(--card-line); border-radius:12px; box-shadow:var(--shadow); padding:22px 22px 18px; display:flex; flex-direction:column}
+  .card[hidden]{display:none}
+  .card .row1{display:flex; justify-content:space-between; align-items:flex-start; gap:12px}
+  .card h3{font-size:1.62rem; font-weight:700}
+  .card h3 .accent{color:var(--wine)}
+  .card .heb{font-family:"Cormorant Garamond",Georgia,serif; font-size:1.15rem; color:var(--gold); margin-top:2px}
+  .card .season{flex:0 0 auto; font-size:.7rem; letter-spacing:.14em; text-transform:uppercase; font-family:Georgia,serif; color:var(--ink-faint); border:1px solid var(--card-line); border-radius:999px; padding:4px 10px; margin-top:4px}
+  .card .hebdate{margin-top:10px; font-weight:600; color:var(--olive); font-size:.98rem}
+  .card p{margin:.55em 0 0; color:var(--ink-soft)}
+  .card p b{color:var(--ink)}
+  .card .nt{border-top:1px dashed var(--card-line); margin-top:12px; padding-top:10px; font-size:.95rem}
+  .card .nt .k{font-size:.68rem; letter-spacing:.16em; text-transform:uppercase; color:var(--gold); font-family:Georgia,serif; display:block; margin-bottom:2px}
+  .card .nextline{margin-top:auto; padding-top:14px}
+  .nextbox{background:var(--bg2); border-radius:8px; padding:10px 14px; display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap}
+  .nextbox .d{font-family:"Cormorant Garamond",Georgia,serif; font-weight:700; font-size:1.14rem}
+  .nextbox .s{display:block; font-size:.8rem; color:var(--ink-faint); font-family:Georgia,serif}
+  .badge{font-size:.78rem; font-family:Georgia,serif; padding:3px 10px; border-radius:999px; background:var(--chip); color:var(--ink-soft); white-space:nowrap}
+  .badge.soon{background:var(--alert-bg); border:1px solid var(--alert-line); color:var(--alert-ink)}
+  .badge.now{background:var(--now-bg); border:1px solid var(--now-line); color:var(--now-ink)}
+  .ref{font-size:.86rem; color:var(--ink-faint); margin-top:10px}
+  /* ---------- year at a glance ---------- */
+  .years{max-width:880px; margin:18px auto 0; display:grid; gap:16px; grid-template-columns:1fr}
+  @media (min-width:820px){ .years{grid-template-columns:1fr 1fr} }
+  .year{background:var(--card); border:1px solid var(--card-line); border-radius:12px; box-shadow:var(--shadow); padding:20px 22px}
+  .year h3{font-size:1.4rem; font-weight:700; margin-bottom:6px}
+  .year h3 span{color:var(--wine)}
+  .year ul{list-style:none; margin:8px 0 0; padding:0}
+  .year li{display:flex; justify-content:space-between; gap:14px; padding:7px 0; border-top:1px solid var(--card-line); font-size:.97rem}
+  .year li:first-child{border-top:none}
+  .year li .n{color:var(--ink)}
+  .year li .d{color:var(--ink-soft); white-space:nowrap; font-size:.92rem}
+  /* ---------- notes ---------- */
+  .notes{max-width:880px; margin:18px auto 0; display:grid; gap:16px; grid-template-columns:1fr}
+  @media (min-width:720px){ .notes{grid-template-columns:1fr 1fr 1fr} }
+  .note{background:var(--card); border:1px solid var(--card-line); border-radius:12px; padding:18px 20px; box-shadow:var(--shadow)}
+  .note h3{font-size:1.3rem; font-weight:700; color:var(--wine); margin-bottom:4px}
+  .note p{margin:.3em 0 0; color:var(--ink-soft); font-size:.96rem}
+  .repo{
+    max-width:880px; margin:20px auto 0; background:var(--card); border:1px solid var(--card-line);
+    border-radius:12px; box-shadow:var(--shadow); padding:20px 24px; text-align:center;
+  }
+  .repo h3{font-size:1.45rem; font-weight:700}
+  .repo p{color:var(--ink-soft); margin:.4em auto 0; max-width:560px}
+  .repo code{
+    display:inline-block; margin-top:10px; font-family:ui-monospace,Menlo,Consolas,monospace; font-size:1.05rem;
+    background:var(--bg2); border:1px solid var(--card-line); border-radius:8px; padding:8px 18px; color:var(--wine);
+  }
+  footer{max-width:880px; margin:36px auto 0; text-align:center; color:var(--ink-faint); font-size:.88rem}
+  footer p{margin:.4em 0}
+  @media (max-width:560px){
+    .tl-row{flex-wrap:wrap; gap:4px 10px}
+    .tl-date{flex-basis:100%}
+    .today div{min-width:120px}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="home-bar"><a class="home-pill" href="https://jesuslovestyler.com/">⌂ Home</a></div>
+
+  <header class="top">
+    <div class="over">Leviticus 23 · Esther · John 10</div>
+    <h1>Bible <span class="accent">Holidays</span></h1>
+    <p class="lead">“These are the set feasts of Yahweh, which you shall proclaim to be holy convocations, even these are my set feasts.” — Leviticus 23:2 (WEB). Every holiday appointed in Scripture, in order through the year, with its next date on our calendar — <em>so none of them slips by unnoticed.</em></p>
+    <figure class="hero">
+      <img src="assets/feasts.webp" alt="Stained-glass artwork of the biblical feasts: a shofar, a golden menorah, sheaves of wheat, a sukkah booth, pomegranates, and the Passover lamb in a medallion" width="1920" height="1280" />
+      <figcaption>The shofar, the lampstand, the firstfruits sheaf, the booth, and the Lamb — the year of the Lord in one window.</figcaption>
+    </figure>
+  </header>
+
+  <div class="today" aria-label="Today">
+    <div><span class="k">Today</span><span class="v" id="todayGreg">Sunday, November 8, 2026</span></div>
+    <div><span class="k">On the Hebrew calendar</span><span class="v" id="todayHeb">28 Heshvan 5787</span></div>
+    <div><span class="k">Next Sabbath</span><span class="v" id="nextSabbath">Saturday, November 14</span></div>
+  </div>
+
+  <div class="reminder" id="reminder" role="status"></div>
+
+  <article class="next" id="nextCard">
+    <div class="next-inner">
+      <div class="k">Coming up next</div>
+      <h2 id="nextName">Feast of Dedication — Hanukkah</h2>
+      <div class="heb" id="nextHeb">Chanukah · חנוכה · 25 Kislev – 2 Tevet</div>
+      <p id="nextDesc">Eight nights remembering the rededication of the Temple. Jesus himself was in Jerusalem for this feast (John 10:22–23).</p>
+      <div class="facts">
+        <div class="fact"><span id="nextDateLabel">First day / dates</span><b id="nextDate">Sat, December 5, 2026</b></div>
+        <div class="fact"><span>Begins</span><b id="nextEve">Sundown, Fri Dec 4</b></div>
+        <div class="fact"><span>Countdown</span><b id="nextCount">27 days away</b></div>
+      </div>
+    </div>
+  </article>
+
+  <section aria-labelledby="orderH">
+    <div class="sec-head">
+      <h2 id="orderH">Coming up, <span class="accent">in order</span></h2>
+      <p>Every biblical holiday, sorted by when it next arrives. Tap one to jump to its card.</p>
+    </div>
+    <div class="timeline" id="timeline"></div>
+  </section>
+
+  <section aria-labelledby="feastsH">
+    <div class="sec-head">
+      <h2 id="feastsH">The holidays, <span class="accent">one by one</span></h2>
+      <p>The seven appointed feasts of Leviticus 23 — with the Sabbath that stands at their head — and the two later days Scripture itself celebrates: Purim and the Feast of Dedication.</p>
+    </div>
+    <div class="filters" role="group" aria-label="Filter holidays">
+      <button type="button" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" data-filter="spring" aria-pressed="false">Spring feasts</button>
+      <button type="button" data-filter="fall" aria-pressed="false">Fall feasts</button>
+      <button type="button" data-filter="more" aria-pressed="false">Sabbath, Purim &amp; Dedication</button>
+    </div>
+    <div class="cards" id="cards">
+
+      <article class="card" data-key="sabbath" data-season="more" id="card-sabbath">
+        <div class="row1"><div><h3>The <span class="accent">Sabbath</span></h3><div class="heb">Shabbat · שבת</div></div><span class="season">Weekly</span></div>
+        <div class="hebdate">Every seventh day — Friday sundown to Saturday nightfall</div>
+        <p>The first holy day named in Leviticus 23, before all the feasts: a day of complete rest, remembering both <b>creation</b> (Exodus 20:8–11) and the <b>exodus from Egypt</b> (Deuteronomy 5:15).</p>
+        <div class="nt"><span class="k">In Jesus</span>“The Sabbath was made for man, not man for the Sabbath. Therefore the Son of Man is lord even of the Sabbath.” — Mark 2:27–28 (WEB). The letter to the Hebrews holds out a greater rest still to come (Hebrews 4:9–11).</div>
+        <div class="nextline"><div class="nextbox"><div><span class="d" data-next>Saturday, November 14, 2026</span><span class="s" data-eve>Begins at sundown Friday</span></div><span class="badge" data-badge>Every week</span></div>
+        <div class="ref">Read: Leviticus 23:3 · Exodus 20:8–11</div></div>
+      </article>
+
+      <article class="card" data-key="passover" data-season="spring" id="card-passover">
+        <div class="row1"><div><h3><span class="accent">Passover</span></h3><div class="heb">Pesach · פסח</div></div><span class="season">Spring</span></div>
+        <div class="hebdate">14 Nisan</div>
+        <p>The night the Lord <b>passed over</b> the houses marked with the lamb's blood and brought Israel out of Egypt. The Passover meal is eaten after sundown, as 15 Nisan begins.</p>
+        <div class="nt"><span class="k">In Jesus</span>Jesus ate this meal with his disciples the night before the cross (Matthew 26:17–30). Paul names the meaning plainly: “Christ, our Passover, has been sacrificed” — 1 Corinthians 5:7 (WEB).</div>
+        <div class="nextline"><div class="nextbox"><div><span class="d" data-next>Wednesday, April 21, 2027</span><span class="s" data-eve>Meal eaten that evening, at sundown</span></div><span class="badge" data-badge></span></div>
+        <div class="ref">Read: Exodus 12 · Leviticus 23:5</div></div>
+      </article>
+
+      <article class="card" data-key="unleavened" data-season="spring" id="card-unleavened">
+        <div class="row1"><div><h3>Unleavened <span class="accent">Bread</span></h3><div class="heb">Chag HaMatzot · חג המצות</div></div><span class="season">Spring</span></div>
+        <div class="hebdate">15–21 Nisan · seven days</div>
+        <p>The week straight after Passover: bread made <b>without leaven</b>, because Israel left Egypt in haste — and because leaven is to be put out of the house, and out of the life, altogether.</p>
+        <div class="nt"><span class="k">In Jesus</span>Paul keeps the picture: purge out the old leaven, “for indeed Christ, our Passover, has been sacrificed in our place” — and keep the feast “with the unleavened bread of sincerity and truth” (1 Corinthians 5:7–8, WEB).</div>
+        <div class="nextline"><div class="nextbox"><div><span class="d" data-next>Thu Apr 22 – Wed Apr 28, 2027</span><span class="s" data-eve>Begins at sundown Wed, Apr 21</span></div><span class="badge" data-badge></span></div>
+        <div class="ref">Read: Leviticus 23:6–8 · Exodus 12:15–20</div></div>
+      </article>
+
+      <article class="card" data-key="firstfruits" data-season="spring" id="card-firstfruits">
+        <div class="row1"><div><h3><span class="accent">Firstfruits</span></h3><div class="heb">Yom HaBikkurim · יום הביכורים</div></div><span class="season">Spring</span></div>
+        <div class="hebdate">16 Nisan · the barley sheaf</div>
+        <p>The priest waves the <b>first sheaf of the barley harvest</b> before the Lord — the first of the crop, given to God, as a promise that the rest of the harvest is coming. The counting of the fifty days to Weeks begins here.</p>
+        <div class="nt"><span class="k">In Jesus</span>“Christ has been raised from the dead. He became the first fruits of those who are asleep.” — 1 Corinthians 15:20 (WEB). His resurrection fell in these very days of the feast.</div>
+        <div class="nextline"><div class="nextbox"><div><span class="d" data-next>Friday, April 23, 2027</span><span class="s" data-eve>Begins at sundown Thu, Apr 22</span></div><span class="badge" data-badge></span></div>
+        <div class="ref">Read: Leviticus 23:9–14</div></div>
+      </article>
+
+      <article class="card" data-key="weeks" data-season="spring" id="card-weeks">
+        <div class="row1"><div><h3>Feast of <span class="accent">Weeks</span></h3><div class="heb">Shavuot · שבועות · Pentecost</div></div><span class="season">Spring</span></div>
+        <div class="hebdate">6 Sivan · fifty days after Firstfruits</div>
+        <p>Count <b>seven weeks</b> from the sheaf, then bring the firstfruits of the wheat harvest — two leavened loaves waved before the Lord. By tradition this is also the season Israel received the Torah at Sinai.</p>
+        <div class="nt"><span class="k">In Jesus</span>On this very feast in Jerusalem, the Holy Spirit came with wind and fire and the church was born: “When the day of Pentecost had come… they were all filled with the Holy Spirit” — Acts 2:1–4 (WEB).</div>
+        <div class="nextline"><div class="nextbox"><div><span class="d" data-next>Friday, June 11, 2027</span><span class="s" data-eve>Begins at sundown Thu, Jun 10</span></div><span class="badge" data-badge></span></div>
+        <div class="ref">Read: Leviticus 23:15–22 · Acts 2</div></div>
+      </article>
+
+      <article class="card" data-key="trumpets" data-season="fall" id="card-trumpets">
+        <div class="row1"><div><h3>Feast of <span class="accent">Trumpets</span></h3><div class="heb">Yom Teruah · יום תרועה · Rosh Hashanah</div></div><span class="season">Fall</span></div>
+        <div class="hebdate">1 Tishrei · a memorial of blowing of trumpets</div>
+        <p>A solemn rest heralded by the <b>blast of the shofar</b> — a wake-up call that opens the fall feasts and, by tradition, the new year. Ten days of reflection follow, leading to the Day of Atonement.</p>
+        <div class="nt"><span class="k">In Jesus</span>The trumpet sounds through the New Testament at the Lord's return: “the trumpet of God” (1 Thessalonians 4:16, WEB) and “the last trumpet. For the trumpet will sound and the dead will be raised incorruptible” (1 Corinthians 15:52, WEB).</div>
+        <div class="nextline"><div class="nextbox"><div><span class="d" data-next>Saturday, October 2, 2027</span><span class="s" data-eve>Begins at sundown Fri, Oct 1</span></div><span class="badge" data-badge></span></div>
+        <div class="ref">Read: Leviticus 23:23–25 · Numbers 29:1</div></div>
+      </article>
+
+      <article class="card" data-key="atonement" data-season="fall" id="card-atonement">
+        <div class="row1"><div><h3>Day of <span class="accent">Atonement</span></h3><div class="heb">Yom Kippur · יום כיפור</div></div><span class="season">Fall</span></div>
+        <div class="hebdate">10 Tishrei · the holiest day of the year</div>
+        <p>Once a year the high priest alone entered the Most Holy Place with blood, to make atonement for the whole people. A day of fasting and <b>afflicting the soul</b> — the most solemn day on the calendar.</p>
+        <div class="nt"><span class="k">In Jesus</span>Hebrews reads this day as a shadow of Christ, our high priest, who entered “once for all into the Holy Place… having obtained eternal redemption” — Hebrews 9:12 (WEB); see Hebrews 9–10.</div>
+        <div class="nextline"><div class="nextbox"><div><span class="d" data-next>Monday, October 11, 2027</span><span class="s" data-eve>Fast begins at sundown Sun, Oct 10</span></div><span class="badge" data-badge></span></div>
+        <div class="ref">Read: Leviticus 16 · Leviticus 23:26–32</div></div>
+      </article>
+
+      <article class="card" data-key="tabernacles" data-season="fall" id="card-tabernacles">
+        <div class="row1"><div><h3>Feast of <span class="accent">Tabernacles</span></h3><div class="heb">Sukkot · סוכות · Booths</div></div><span class="season">Fall</span></div>
+        <div class="hebdate">15–21 Tishrei · seven days</div>
+        <p>The joyful harvest feast: live for a week in <b>booths</b> of branches, remembering the wilderness journey — that God sheltered Israel under open skies, and that He delights to dwell among his people.</p>
+        <div class="nt"><span class="k">In Jesus</span>Jesus went up to this feast and cried out in the temple, “If anyone is thirsty, let him come to me and drink!” (John 7:2, 37–38, WEB). The story ends where Sukkot always pointed: “God's dwelling is with people” — Revelation 21:3 (WEB).</div>
+        <div class="nextline"><div class="nextbox"><div><span class="d" data-next>Sat Oct 16 – Fri Oct 22, 2027</span><span class="s" data-eve>Begins at sundown Fri, Oct 15</span></div><span class="badge" data-badge></span></div>
+        <div class="ref">Read: Leviticus 23:33–43 · John 7</div></div>
+      </article>
+
+      <article class="card" data-key="eighthday" data-season="fall" id="card-eighthday">
+        <div class="row1"><div><h3>The <span class="accent">Eighth Day</span></h3><div class="heb">Shemini Atzeret · שמיני עצרת</div></div><span class="season">Fall</span></div>
+        <div class="hebdate">22 Tishrei · the day after Tabernacles</div>
+        <p>“On the eighth day you shall have a holy convocation” — one <b>final, smaller day</b> of assembly after the week of booths, closing the whole feast season before the rains and the new year of work.</p>
+        <div class="nt"><span class="k">In Jesus</span>It was “on the last and greatest day of the feast” that Jesus stood and cried out his promise of living water (John 7:37, WEB) — the feast's last days and this day stand side by side in his teaching.</div>
+        <div class="nextline"><div class="nextbox"><div><span class="d" data-next>Saturday, October 23, 2027</span><span class="s" data-eve>Begins at sundown Fri, Oct 22</span></div><span class="badge" data-badge></span></div>
+        <div class="ref">Read: Leviticus 23:36, 39 · Numbers 29:35</div></div>
+      </article>
+
+      <article class="card" data-key="purim" data-season="more" id="card-purim">
+        <div class="row1"><div><h3><span class="accent">Purim</span></h3><div class="heb">Purim · פורים · “Lots”</div></div><span class="season">More days</span></div>
+        <div class="hebdate">14 Adar · 14 Adar II in a leap year</div>
+        <p>Remembering <b>Esther</b>: how Haman cast lots (<i>purim</i>) for Israel's destruction, and how God turned the day around — “the reverse happened,” and sorrow became joy. Celebrated with the reading of Esther, gifts of food, and gifts to the poor.</p>
+        <div class="nt"><span class="k">In Scripture</span>The book of Esther never speaks God's name aloud — yet his hand is on every page, preserving his people in exile. The feast was established by Mordecai and Esther themselves (Esther 9:20–32).</div>
+        <div class="nextline"><div class="nextbox"><div><span class="d" data-next>Tuesday, March 23, 2027</span><span class="s" data-eve>Begins at sundown Mon, Mar 22</span></div><span class="badge" data-badge></span></div>
+        <div class="ref">Read: The book of Esther, especially ch. 9</div></div>
+      </article>
+
+      <article class="card" data-key="dedication" data-season="more" id="card-dedication">
+        <div class="row1"><div><h3>Feast of <span class="accent">Dedication</span></h3><div class="heb">Chanukah · חנוכה · Hanukkah</div></div><span class="season">More days</span></div>
+        <div class="hebdate">25 Kislev – 2 Tevet · eight days</div>
+        <p>Eight nights remembering the <b>rededication of the Temple</b> under the Maccabees, after it had been defiled — the lampstand lit again in God's house, in the darkest weeks of the year.</p>
+        <div class="nt"><span class="k">In Jesus</span>“It was the Feast of the Dedication at Jerusalem. It was winter, and Jesus was walking in the temple, in Solomon's porch.” — John 10:22–23 (WEB). He kept this feast in Jerusalem himself.</div>
+        <div class="nextline"><div class="nextbox"><div><span class="d" data-next>Sat Dec 5 – Sat Dec 12, 2026</span><span class="s" data-eve>First candle at sundown Fri, Dec 4</span></div><span class="badge" data-badge></span></div>
+        <div class="ref">Read: John 10:22–23 · 1 Maccabees 4:52–59</div></div>
+      </article>
+
+    </div>
+  </section>
+
+  <section aria-labelledby="yearH">
+    <div class="sec-head">
+      <h2 id="yearH">The year <span class="accent">at a glance</span></h2>
+      <p>The biblical days (Israel's count — one day for each feast day itself). Some communities outside Israel add a second day to Passover, Weeks, Tabernacles, and the Eighth Day.</p>
+    </div>
+    <div class="years">
+      <div class="year">
+        <h3>From now through <span>autumn 2027</span></h3>
+        <ul>
+          <li><span class="n">Feast of Dedication (Hanukkah)</span><span class="d">Dec 5–12, 2026</span></li>
+          <li><span class="n">Purim</span><span class="d">Mar 23, 2027</span></li>
+          <li><span class="n">Passover</span><span class="d">Apr 21, 2027</span></li>
+          <li><span class="n">Unleavened Bread</span><span class="d">Apr 22–28, 2027</span></li>
+          <li><span class="n">Firstfruits</span><span class="d">Apr 23, 2027</span></li>
+          <li><span class="n">Feast of Weeks (Pentecost)</span><span class="d">Jun 11, 2027</span></li>
+          <li><span class="n">Feast of Trumpets</span><span class="d">Oct 2, 2027</span></li>
+          <li><span class="n">Day of Atonement</span><span class="d">Oct 11, 2027</span></li>
+          <li><span class="n">Feast of Tabernacles</span><span class="d">Oct 16–22, 2027</span></li>
+          <li><span class="n">The Eighth Day</span><span class="d">Oct 23, 2027</span></li>
+        </ul>
+      </div>
+      <div class="year">
+        <h3>The season <span>after that</span></h3>
+        <ul>
+          <li><span class="n">Feast of Dedication (Hanukkah)</span><span class="d">Dec 25, 2027 – Jan 1, 2028</span></li>
+          <li><span class="n">Purim</span><span class="d">Mar 12, 2028</span></li>
+          <li><span class="n">Passover</span><span class="d">Apr 10, 2028</span></li>
+          <li><span class="n">Unleavened Bread</span><span class="d">Apr 11–17, 2028</span></li>
+          <li><span class="n">Firstfruits</span><span class="d">Apr 12, 2028</span></li>
+          <li><span class="n">Feast of Weeks (Pentecost)</span><span class="d">May 31, 2028</span></li>
+          <li><span class="n">Feast of Trumpets</span><span class="d">Sep 21, 2028</span></li>
+          <li><span class="n">Day of Atonement</span><span class="d">Sep 30, 2028</span></li>
+          <li><span class="n">Feast of Tabernacles</span><span class="d">Oct 5–11, 2028</span></li>
+          <li><span class="n">The Eighth Day</span><span class="d">Oct 12, 2028</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="howH">
+    <div class="sec-head">
+      <h2 id="howH">How to read <span class="accent">this calendar</span></h2>
+    </div>
+    <div class="notes">
+      <div class="note">
+        <h3>Each day begins at sundown</h3>
+        <p>“From evening to evening, you shall keep your Sabbath” (Leviticus 23:32, WEB). So every date on this page is the feast's first <i>full</i> day — and each card tells you the evening before, when it actually begins.</p>
+      </div>
+      <div class="note">
+        <h3>Why the dates move</h3>
+        <p>The Hebrew calendar follows the moon, so a feast is fixed on its Hebrew date — Passover is always 14 Nisan — but lands on a different day of our calendar each year. This page converts for you: open it any day, in any year, and the “next” dates and countdowns are worked out fresh from today's date.</p>
+      </div>
+      <div class="note">
+        <h3>Leap years add a month</h3>
+        <p>To keep Passover in spring, a second month of Adar is added seven times in nineteen years. In those years Purim is kept in Adar II — which is why Purim 2027 falls on March 23, in Adar II 5787.</p>
+      </div>
+    </div>
+
+    <div class="repo">
+      <h3>For the Jesus Loves Tyler site</h3>
+      <p>The repository name for this page:</p>
+      <code>Bible-Holidays</code>
+      <p>Plain and findable, in the same style as Catholic-Bible — the address reads <b>jesuslovestyler.github.io/Bible-Holidays</b>.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p>Reminders live at the top of this page: when a feast is <b>seven days away or less</b>, a reminder banner appears; the day it begins, it reads <b>“begins tonight at sundown.”</b></p>
+    <p>Feast dates follow the Hebrew calendar and were checked against Hebcal on November 8, 2026. Scripture quotations are from the World English Bible (WEB), which is in the public domain.</p>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var MS_DAY = 86400000;
+  function atNoon(d){ var x = new Date(d.getFullYear(), d.getMonth(), d.getDate(), 12, 0, 0); return x; }
+  function dayStart(d){ return new Date(d.getFullYear(), d.getMonth(), d.getDate()); }
+  var today = new Date();
+  var todayStart = dayStart(today);
+
+  /* ---------- Hebrew date tools (built into the browser) ---------- */
+  var hebFmt = null, hebParts = null;
+  try {
+    hebFmt = new Intl.DateTimeFormat("en-u-ca-hebrew", {day:"numeric", month:"long", year:"numeric"});
+    hebParts = new Intl.DateTimeFormat("en-u-ca-hebrew", {day:"numeric", month:"long", year:"numeric"});
+  } catch(e){ hebFmt = null; }
+  function hebrewOf(date){
+    if(!hebParts) return null;
+    var parts = hebParts.formatToParts(atNoon(date)), out = {};
+    for(var i=0;i<parts.length;i++){ if(parts[i].type==="day") out.day = parseInt(parts[i].value,10); if(parts[i].type==="month") out.month = parts[i].value; if(parts[i].type==="year") out.year = parts[i].value; }
+    return out;
+  }
+  function monthMatches(hMonth, wanted){
+    for(var i=0;i<wanted.length;i++){ if(hMonth === wanted[i]) return true; }
+    return false;
+  }
+
+  /* ---------- Feast definitions ---------- */
+  /* months use the browser's Hebrew month names: Tishri, Heshvan, Kislev, Tevet, Shevat, Adar / Adar I / Adar II, Nisan, Iyar, Sivan, Tammuz, Av, Elul */
+  var FEASTS = [
+    {key:"passover",   name:"Passover",                 heb:"Pesach · פסח",                    hebDate:"14 Nisan",            months:["Nisan"],            day:14, dur:1, desc:"The night the Lord passed over the houses marked with the lamb's blood and brought Israel out of Egypt."},
+    {key:"unleavened", name:"Unleavened Bread",         heb:"Chag HaMatzot · חג המצות",       hebDate:"15–21 Nisan",         months:["Nisan"],            day:15, dur:7, desc:"Seven days of bread without leaven — out of Egypt in haste, and leaven put away altogether."},
+    {key:"firstfruits",name:"Firstfruits",              heb:"Yom HaBikkurim · יום הביכורים",  hebDate:"16 Nisan",            months:["Nisan"],            day:16, dur:1, desc:"The first sheaf of the barley harvest waved before the Lord — the first of the crop, and a promise of the rest."},
+    {key:"weeks",      name:"Feast of Weeks — Pentecost", heb:"Shavuot · שבועות",             hebDate:"6 Sivan",             months:["Sivan"],            day:6,  dur:1, desc:"Fifty days after the sheaf: the wheat harvest's firstfruits — and the day the Holy Spirit came in Acts 2."},
+    {key:"trumpets",   name:"Feast of Trumpets",        heb:"Yom Teruah · יום תרועה",         hebDate:"1 Tishri",            months:["Tishri"],           day:1,  dur:1, desc:"A solemn rest heralded by the blast of the shofar, opening the fall feasts."},
+    {key:"atonement",  name:"Day of Atonement",         heb:"Yom Kippur · יום כיפור",          hebDate:"10 Tishri",           months:["Tishri"],           day:10, dur:1, desc:"The holiest day of the year — the high priest, the Most Holy Place, and atonement for the whole people."},
+    {key:"tabernacles",name:"Feast of Tabernacles",     heb:"Sukkot · סוכות",                 hebDate:"15–21 Tishri",        months:["Tishri"],           day:15, dur:7, desc:"A week in booths of branches, remembering the wilderness — God sheltered Israel, and delights to dwell among his people."},
+    {key:"eighthday",  name:"The Eighth Day",           heb:"Shemini Atzeret · שמיני עצרת",   hebDate:"22 Tishri",           months:["Tishri"],           day:22, dur:1, desc:"One final, smaller day of assembly after the week of booths, closing the feast season."},
+    {key:"purim",      name:"Purim",                    heb:"Purim · פורים",                  hebDate:"14 Adar (II in leap years)", months:["Adar","Adar II"], day:14, dur:1, desc:"Esther's day: lots cast for Israel's destruction, turned around by God into joy."},
+    {key:"dedication", name:"Feast of Dedication — Hanukkah", heb:"Chanukah · חנוכה",         hebDate:"25 Kislev – 2 Tevet", months:["Kislev"],           day:25, dur:8, desc:"Eight nights remembering the rededication of the Temple. Jesus himself was in Jerusalem for this feast (John 10:22–23)."}
+  ];
+
+  function findNext(f){
+    if(!hebParts) return null;
+    /* start a little before today so a feast already under way still counts */
+    var cursor = new Date(todayStart.getTime() - (f.dur - 1) * MS_DAY);
+    for(var i=0;i<560;i++){
+      var h = hebrewOf(cursor);
+      if(h && h.day === f.day && monthMatches(h.month, f.months)){
+        var start = dayStart(cursor);
+        var end = new Date(start.getTime() + (f.dur - 1) * MS_DAY);
+        if(end.getTime() >= todayStart.getTime()){ return {start:start, end:end}; }
+      }
+      cursor = new Date(cursor.getTime() + MS_DAY);
+    }
+    return null;
+  }
+
+  var gregLong = new Intl.DateTimeFormat("en-US", {weekday:"long", month:"long", day:"numeric", year:"numeric"});
+  var gregShort = new Intl.DateTimeFormat("en-US", {weekday:"short", month:"short", day:"numeric", year:"numeric"});
+  var eveFmt = new Intl.DateTimeFormat("en-US", {weekday:"short", month:"short", day:"numeric"});
+
+  /* ---------- Today strip ---------- */
+  var tg = document.getElementById("todayGreg");
+  if(tg) tg.textContent = gregLong.format(today);
+  var th = document.getElementById("todayHeb");
+  if(th && hebFmt){ try{ th.textContent = hebFmt.format(atNoon(today)); }catch(e){} }
+
+  /* ---------- Next Sabbath ---------- */
+  function nextSaturday(){
+    var d = new Date(todayStart.getTime());
+    var add = (6 - d.getDay() + 7) % 7; /* 6 = Saturday; 0 if today is Saturday */
+    return new Date(d.getTime() + add * MS_DAY);
+  }
+  var sab = nextSaturday();
+  var ns = document.getElementById("nextSabbath");
+  if(ns) ns.textContent = (sab.getTime() === todayStart.getTime()) ? "Today — Saturday" : gregShort.format(sab).replace(", " + sab.getFullYear(), "") ;
+  var sabCard = document.querySelector('[data-key="sabbath"] [data-next]');
+  if(sabCard) sabCard.textContent = gregLong.format(sab) + (sab.getTime() === todayStart.getTime() ? " — today" : "");
+
+  /* ---------- Countdown wording ---------- */
+  function statusFor(occ){
+    if(!occ) return null;
+    var diff = Math.round((occ.start.getTime() - todayStart.getTime()) / MS_DAY);
+    var during = diff <= 0 && occ.end.getTime() >= todayStart.getTime();
+    var text, cls = "";
+    if(during && diff === 0){ text = "Today"; cls = "now"; }
+    else if(during){ text = "Happening now"; cls = "now"; }
+    else if(diff === 1){ text = "Begins tonight at sundown"; cls = "soon"; }
+    else if(diff === 2){ text = "Begins tomorrow at sundown"; cls = "soon"; }
+    else if(diff <= 7){ text = "In " + diff + " days"; cls = "soon"; }
+    else { text = "In " + diff + " days"; }
+    return {diff:diff, during:during, text:text, cls:cls};
+  }
+  function dateLabel(f, occ){
+    if(f.dur === 1) return gregLong.format(occ.start);
+    var a = eveFmt.format(occ.start), b = eveFmt.format(occ.end);
+    return a + " – " + b + ", " + occ.end.getFullYear();
+  }
+  function eveLabel(occ){
+    var eve = new Date(occ.start.getTime() - MS_DAY);
+    return "Begins at sundown " + eveFmt.format(eve);
+  }
+
+  /* ---------- Fill cards, build timeline, find the very next feast ---------- */
+  var results = [];
+  FEASTS.forEach(function(f){
+    var occ = findNext(f);
+    f.occ = occ; f.status = occ ? statusFor(occ) : null;
+    results.push(f);
+    var card = document.getElementById("card-" + f.key);
+    if(card && occ){
+      var dEl = card.querySelector("[data-next]"), eEl = card.querySelector("[data-eve]"), bEl = card.querySelector("[data-badge]");
+      if(dEl) dEl.textContent = dateLabel(f, occ);
+      if(eEl) eEl.textContent = f.key === "passover" ? "Meal eaten that evening, at sundown" : eveLabel(occ);
+      if(bEl && f.status){ bEl.textContent = f.status.text; if(f.status.cls) bEl.className = "badge " + f.status.cls; }
+    }
+  });
+  results.sort(function(a,b){
+    if(!a.occ) return 1; if(!b.occ) return -1;
+    return a.occ.start.getTime() - b.occ.start.getTime();
+  });
+
+  var tl = document.getElementById("timeline");
+  if(tl){
+    tl.innerHTML = "";
+    results.forEach(function(f){
+      if(!f.occ) return;
+      var a = document.createElement("a");
+      a.className = "tl-row"; a.href = "#card-" + f.key;
+      var d = document.createElement("span"); d.className = "tl-date"; d.textContent = f.dur === 1 ? eveFmt.format(f.occ.start) : eveFmt.format(f.occ.start) + " – " + eveFmt.format(f.occ.end);
+      var n = document.createElement("span"); n.className = "tl-name";
+      n.appendChild(document.createTextNode(f.name));
+      var sm = document.createElement("small"); sm.textContent = f.hebDate + " · " + eveLabel(f.occ).replace("Begins at ", "begins ");
+      n.appendChild(sm);
+      var bg = document.createElement("span"); bg.className = "tl-badge" + (f.status && f.status.cls ? " " + f.status.cls : ""); bg.textContent = f.status ? f.status.text : "";
+      a.appendChild(d); a.appendChild(n); a.appendChild(bg);
+      tl.appendChild(a);
+    });
+  }
+
+  /* ---------- Coming up next + reminder banner ---------- */
+  var next = results[0];
+  if(next && next.occ){
+    var nm = document.getElementById("nextName"); if(nm) nm.textContent = next.name;
+    var nh = document.getElementById("nextHeb"); if(nh) nh.textContent = next.heb + " · " + next.hebDate;
+    var nd = document.getElementById("nextDesc"); if(nd) nd.textContent = next.desc;
+    var ndt = document.getElementById("nextDate"); if(ndt) ndt.textContent = next.dur === 1 ? gregShort.format(next.occ.start) : dateLabel(next, next.occ);
+    var nev = document.getElementById("nextEve"); if(nev) nev.textContent = next.key === "passover" ? "Evening of " + eveFmt.format(next.occ.start) : "Sundown, " + eveFmt.format(new Date(next.occ.start.getTime() - MS_DAY));
+    var nc = document.getElementById("nextCount"); if(nc && next.status) nc.textContent = next.status.text;
+
+    var rem = document.getElementById("reminder");
+    if(rem && next.status){
+      if(next.status.during){
+        rem.className = "reminder show now";
+        rem.innerHTML = "";
+        var b1 = document.createElement("span"); b1.className = "bell"; b1.textContent = "✦";
+        var t1 = document.createElement("span");
+        t1.innerHTML = "<b>" + next.name + " is here.</b> It began at sundown and runs through " + gregShort.format(next.occ.end) + ".";
+        rem.appendChild(b1); rem.appendChild(t1);
+      } else if(next.status.diff <= 7){
+        rem.className = "reminder show soon";
+        rem.innerHTML = "";
+        var b2 = document.createElement("span"); b2.className = "bell"; b2.textContent = "✦";
+        var t2 = document.createElement("span");
+        var when = next.status.diff === 1 ? "begins <b>tonight at sundown</b>" :
+                   next.status.diff === 2 ? "begins <b>tomorrow at sundown</b>" :
+                   "begins at sundown in <b>" + (next.status.diff - 1) + " days</b>, on " + eveFmt.format(new Date(next.occ.start.getTime() - MS_DAY));
+        t2.innerHTML = "<b>Reminder — " + next.name + "</b> " + when + " (" + next.hebDate + "). First full day: " + gregLong.format(next.occ.start) + ".";
+        rem.appendChild(b2); rem.appendChild(t2);
+      }
+    }
+  }
+
+  /* ---------- Filters ---------- */
+  var buttons = document.querySelectorAll(".filters button");
+  buttons.forEach(function(btn){
+    btn.addEventListener("click", function(){
+      buttons.forEach(function(b){ b.setAttribute("aria-pressed", b === btn ? "true" : "false"); });
+      var want = btn.getAttribute("data-filter");
+      document.querySelectorAll("#cards .card").forEach(function(card){
+        var show = want === "all" || card.getAttribute("data-season") === want;
+        card.hidden = !show;
+      });
+    });
+  });
+})();
+</script>
+<script data-goatcounter="https://jesuslovestyler.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
